@@ -1,0 +1,7 @@
+[
+  {"id": 1, "type": "villa", "location": "Jubilee Hills", "size": 3000, "price": 95000, "video_url": "https://example.com/video1.mp4"},
+  {"id": 2, "type": "apartment", "location": "Gachibowli", "size": 1800, "price": 45000, "video_url": "https://example.com/video2.mp4"},
+  {"id": 3, "type": "villa", "location": "Banjara Hills", "size": 3500, "price": 120000, "video_url": "https://example.com/video3.mp4"},
+  {"id": 4, "type": "apartment", "location": "Hitech City", "size": 1500, "price": 40000, "video_url": "https://example.com/video4.mp4"},
+  {"id": 5, "type": "apartment", "location": "Kondapur", "size": 2000, "price": 55000, "video_url": "https://example.com/video5.mp4"}
+]

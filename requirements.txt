@@ -1,0 +1,9 @@
+Flask
+Flask-SocketIO
+Flask-Cors
+python-dotenv
+pandas
+twilio
+google-generativeai
+eventlet
+request
