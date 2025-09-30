@@ -1,70 +1,96 @@
-# Getting Started with Create React App
+# Real Estate Virtual Agent
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A proof-of-concept multi-agent system that simulates a conversation with an intelligent real estate consultant. This application uses a 3D avatar, voice recognition, and a backend powered by specialized AI agents to recommend properties, negotiate prices, and send follow-ups.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## Features
 
-### `npm start`
+-   **🤖 Multi-Agent System:** An orchestrator manages several specialized agents, each with a single responsibility:
+    -   **Greeting Agent:** Uses Google's Gemini API for natural, conversational greetings.
+    -   **Recommendation Agent:** Filters and suggests properties based on user preferences.
+    -   **Emotion Agent:** Performs basic sentiment analysis to gauge user interest.
+    -   **Negotiation Agent:** Adjusts property prices based on user interest and other factors.
+    -   **Finance Agent:** Calculates loan and EMI options for a given property.
+    -   **Follow-Up Agent:** Sends a summary via WhatsApp using the Twilio API.
+-   **🗣️ Voice Interaction:** Leverages the browser's Web Speech API for both speech-to-text (user input) and text-to-speech (agent responses).
+-   **🎨 Interactive 3D Avatar:** A simple, interactive 3D avatar built with React Three Fiber provides a visual front for the agent.
+-   **⚡ Real-time Communication:** Uses WebSockets for low-latency communication between the frontend and the backend agents.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Tech Stack
 
-### `npm test`
+-   **Backend:**
+    -   🐍 **Python**
+    -   **Flask** & **Flask-SocketIO**
+    -   **Google Gemini API** for generative AI
+    -   **Twilio API** for WhatsApp messaging
+    -   **Pandas** for data handling
+-   **Frontend:**
+    -   ⚛️ **React**
+    -   **React Three Fiber** & **Drei** for 3D graphics
+    -   **Socket.IO Client** for WebSocket communication
+    -   **Web Speech API** (built into modern browsers)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+## Getting Started
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Follow these instructions to get a copy of the project up and running on your local machine.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Prerequisites
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+-   **Python** (3.8 or newer)
+-   **Node.js and npm**
+-   **Git**
+-   API Keys for:
+    -   **Google Gemini**
+    -   **Twilio**
 
-### `npm run eject`
+---
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Installation & Setup
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+1.  **Clone the repository:**
+    ```sh
+    git clone [https://github.com/your-username/real-estate-agent.git](https://github.com/your-username/real-estate-agent.git)
+    cd real-estate-agent
+    ```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+2.  **Backend Setup:**
+    ```sh
+    # Navigate to the backend directory
+    cd backend
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+    # Create and activate a virtual environment
+    python -m venv venv
+    # On Windows:
+    .\venv\Scripts\activate
+    # On Mac/Linux:
+    source venv/bin/activate
 
-## Learn More
+    # Install Python dependencies
+    pip install -r requirements.txt
+    ```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+3.  **Frontend Setup:**
+    ```sh
+    # Navigate to the frontend directory from the root
+    cd frontend
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+    # Install npm packages
+    npm install
+    ```
 
-### Code Splitting
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### Configuration
 
-### Analyzing the Bundle Size
+The backend requires API keys to function.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+1.  In the `backend` folder, create a new file named `.env`.
+2.  Copy the contents of `.env.example` (or the block below) into your new `.env` file.
+3.  Replace the placeholder values with your actual API keys.
 
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+**`.env` file contents:**
